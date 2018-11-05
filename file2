@@ -1,4 +1,36 @@
-mkdir -p docker_data/certs
+* openssl req -new -newkey rsa:4096 -days 365 -subj "/CN=localhost" -nodes -x509 -keyout conf/auth.key -out conf/auth.cert
+
+
+
+* docker run -v /root/conf/registry-srv.yml:/etc/docker/registry/config.yml:ro -v /root/conf/auth.cert:/etc/docker/registry/auth.cert:ro -p 5001:5000  --name registry-msr -d registry:2
+----
+* docker run -v /root/conf/registry-web.yml:/conf/config.yml:ro -v /root/conf/auth.key:/conf/auth.key -v /root/db:/data -itd -p 8084:8080 --link registry-msr --name registry-web hyper/docker-registry-web
+
+
+-------
+
+docker rm $(docker ps -q -f status=created)
+
+docker logs 1e303d45021d
+
+docker rm $(docker ps -q -f status=exited)
+
+
+--------
+
+file content insert issue.
+
+YAML Error: Inconsistent indentation level
+   Code: YAML_PARSE_ERR_INCONSISTENT_INDENTATION
+   Line: 5
+   Document: 1
+ at /usr/share/perl5/YAML/Loader.pm line 719.
+ 
+ -----------
+ 
+ openssl req -newkey rsa:4096 -nodes -sha256 -keyout /sudha/auth.key -x509 -days 365 -out /sudha/auth.cert
+ 
+ I/O error on GET request for "http://registry-srv:5000/v2/_catalog?n=100":registry-srv; nested exception is java.net.UnknownHostException: registry-srvmkdir -p docker_data/certs
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout /docker_data/certs/domain.key -x509 -days 365 -out /docker_data/certs/domain.crt
 
 openssl req -newkey rsa:4096 -nodes -sha256 -keyout /conf/auth.key -x509 -days 365 -out /conf/certs/auth.crt
