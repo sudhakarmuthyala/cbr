@@ -1,0 +1,68 @@
+docker issue
+
+[root@devops19 ~]# docker logs f2ed3d87a1ba
+time="2018-11-06T05:42:05Z" level=warning msg="No HTTP secret provided - generat                                                                                        ed random secret. This may cause problems with uploads if multiple registries ar                                                                                        e behind a load-balancer. To provide a shared secret, fill in http.secret in the                                                                                         configuration file or set the REGISTRY_HTTP_SECRET environment variable." go.ve                                                                                        rsion=go1.7.6 instance.id=5eb502f5-52a7-4735-a0fc-2dcb5df89ffc version=v2.6.2
+time="2018-11-06T05:42:05Z" level=info msg="redis not configured" go.version=go1                                                                                        .7.6 instance.id=5eb502f5-52a7-4735-a0fc-2dcb5df89ffc version=v2.6.2
+time="2018-11-06T05:42:05Z" level=info msg="Starting upload purge in 6m0s" go.ve                                                                                        rsion=go1.7.6 instance.id=5eb502f5-52a7-4735-a0fc-2dcb5df89ffc version=v2.6.2
+time="2018-11-06T05:42:05Z" level=info msg="listening on [::]:5000" go.version=g                                                                                        o1.7.6 instance.id=5eb502f5-52a7-4735-a0fc-2dcb5df89ffc version=v2.6.2
+------
+[root@devops19 ~]# docker logs cc8e3ab7497e
+CATALINA_OPTS: -Djava.security.egd=file:/dev/./urandom -Dcontext.path=
+Using CATALINA_BASE:   /var/lib/tomcat7
+Using CATALINA_HOME:   /usr/share/tomcat7
+Using CATALINA_TMPDIR: /var/lib/tomcat7/temp
+Using JRE_HOME:        /usr/lib/jvm/java-7-openjdk-amd64
+Using CLASSPATH:       /usr/share/tomcat7/bin/bootstrap.jar:/usr/share/tomcat7/bin/tomcat-juli.jar
+Nov 06, 2018 5:43:31 AM org.apache.coyote.AbstractProtocol init
+INFO: Initializing ProtocolHandler ["http-bio-8080"]
+Nov 06, 2018 5:43:31 AM org.apache.catalina.startup.Catalina load
+INFO: Initialization processed in 9568 ms
+Nov 06, 2018 5:43:32 AM org.apache.catalina.core.StandardService startInternal
+INFO: Starting service Catalina
+Nov 06, 2018 5:43:32 AM org.apache.catalina.core.StandardEngine startInternal
+INFO: Starting Servlet Engine: Apache Tomcat/7.0.52 (Ubuntu)
+2018-11-06 05:44:37,928 [localhost-startStop-1] INFO  hibernate4.HibernatePluginSupport  - Set db generation strategy to 'update' for datasource DEFAULT
+
+Configuring Spring Security Core ...
+... finished configuring Spring Security Core
+
+2018-11-06 05:44:42,606 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanDefinitionRegistry start
+2018-11-06 05:44:42,652 [localhost-startStop-1] INFO  cache.CacheBeanPostProcessor  - postProcessBeanFactory
+2018-11-06 05:44:50,822 [localhost-startStop-1] WARN  config.ConfigurationFactory  - No configuration found. Configuring ehcache from ehcache-failsafe.xml  found in the classpath: jar:file:/var/lib/tomcat7/webapps/ROOT/WEB-INF/lib/ehcache-2.9.0.jar!/ehcache-failsafe.xml
+2018-11-06 05:44:57,171 [localhost-startStop-1] INFO  ehcache.GrailsEhCacheManagerFactoryBean  - Initializing EHCache CacheManager
+2018-11-06 05:45:05,662 [localhost-startStop-1] WARN  web.TokenService  - Authorization disabled
+2018-11-06 05:45:16,470 [localhost-startStop-1] INFO  filter.AnnotationSizeOfFilter  - Using regular expression provided through VM argument net.sf.ehcache.pool.sizeof.ignore.pattern for IgnoreSizeOf annotation : ^.*cache\..*IgnoreSizeOf$
+2018-11-06 05:45:16,504 [localhost-startStop-1] INFO  sizeof.AgentLoader  - Located valid 'tools.jar' at '/usr/lib/jvm/java-7-openjdk-amd64/jre/../lib/tools.jar'
+2018-11-06 05:45:16,522 [localhost-startStop-1] INFO  sizeof.JvmInformation  - Detected JVM data model settings of: 64-Bit OpenJDK JVM with Compressed OOPs
+2018-11-06 05:45:16,812 [localhost-startStop-1] INFO  sizeof.AgentLoader  - Extracted agent jar to temporary file /var/lib/tomcat7/temp/ehcache-sizeof-agent3386267329580334584.jar
+2018-11-06 05:45:16,812 [localhost-startStop-1] INFO  sizeof.AgentLoader  - Trying to load agent @ /var/lib/tomcat7/temp/ehcache-sizeof-agent3386267329580334584.jar
+2018-11-06 05:45:16,822 [localhost-startStop-1] INFO  impl.DefaultSizeOfEngine  - using Agent sizeof engine
+2018-11-06 05:45:16,858 [localhost-startStop-1] INFO  impl.DefaultSizeOfEngine  - using Agent sizeof engine
+2018-11-06 05:45:16,948 [localhost-startStop-1] INFO  context.GrailsConfigUtils  - [GrailsContextLoader] Grails application loaded.
+2018-11-06 05:45:17,077 [localhost-startStop-1] INFO  conf.BootStrap  - Starting registry-web ver. 0.1.3-SNAPSHOT-bededf47611365f0a6d2bb87942e3b86c1e92d9f
+2018-11-06 05:45:17,229 [localhost-startStop-1] INFO  web.ConfigService  - [environmentProperties, localProperties]
+2018-11-06 05:45:17,264 [localhost-startStop-1] INFO  web.ConfigService  - resolved config:
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.url: http://registry-srv:5000/v2
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.auth:
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.auth.key: /config/auth.key
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.readonly: false
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.trust_any_ssl: false
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.basic_auth:
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.enabled: true
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.auth.enabled: false
+2018-11-06 05:45:17,288 [localhost-startStop-1] INFO  web.ConfigService  - registry.context_path:
+2018-11-06 05:45:17,297 [localhost-startStop-1] INFO  web.ConfigService  - registry.auth.issuer: test-issuer
+2018-11-06 05:45:17,297 [localhost-startStop-1] INFO  web.ConfigService  - registry.issuer: my issuer
+2018-11-06 05:45:17,297 [localhost-startStop-1] INFO  web.ConfigService  - registry.key: /conf/auth.key
+2018-11-06 05:45:17,297 [localhost-startStop-1] INFO  web.ConfigService  - registry.name: localhost:5000
+2018-11-06 05:45:17,300 [localhost-startStop-1] INFO  conf.BootStrap  - auth enabled: false
+Nov 06, 2018 5:45:17 AM org.apache.coyote.AbstractProtocol start
+INFO: Starting ProtocolHandler ["http-bio-8080"]
+Nov 06, 2018 5:45:17 AM org.apache.catalina.startup.Catalina start
+INFO: Server startup in 106059 ms
+2018-11-06 06:04:03,739 [http-bio-8080-exec-5] WARN  web.RepositoryController  - URI: '_catalog?n=100' responseCode: 401
+
+----------
+
+I/O error on GET request for "http://localhost:5000/v2/_catalog?n=100":Connection refused; nested exception is java.net.ConnectException: Connection refused
+---
